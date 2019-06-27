@@ -74,4 +74,4 @@ order by yr desc, winner
 SELECT winner, subject
 FROM nobel
 WHERE yr = 1984
-ORDER BY subject in ('Physics','Chemistry'), subject, winner
+ORDER BY  case when subject in ('Physics','Chemistry') then 1 else 0 end, subject, winner
